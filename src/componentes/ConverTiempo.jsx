@@ -4,8 +4,8 @@ import './Convertidor.css'
 
 const ConverTiempo = () => {
   const [valor, setValor] = useState('')
-  const [unidadOrigen, setunidadOrigen] = useState('segundos')
-  const [unidadDestino, setunidadDestino] = useState('minutos')
+  const [entrada, setentrada] = useState('segundos')
+  const [recibo, setrecibo] = useState('minutos')
   const [resultado, setResultado] = useState(null)
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
@@ -34,8 +34,8 @@ const ConverTiempo = () => {
         },
         body: JSON.stringify({
           valor: parseFloat(valor),
-          unidadOrigen,
-          unidadDestino
+          entrada,
+          recibo
         })
       })
 
@@ -70,7 +70,7 @@ const ConverTiempo = () => {
 
         <div className="campo">
           <label>De:</label>
-          <select value={unidadOrigen} onChange={(e) => setunidadOrigen(e.target.value)}>
+          <select value={entrada} onChange={(e) => setentrada(e.target.value)}>
             {unidadesTiempo.map(unidad => (
               <option key={unidad.valor} value={unidad.valor}>
                 {unidad.etiqueta}
@@ -81,7 +81,7 @@ const ConverTiempo = () => {
 
         <div className="campo">
           <label>A:</label>
-          <select value={unidadDestino} onChange={(e) => setunidadDestino(e.target.value)}>
+          <select value={recibo} onChange={(e) => setrecibo(e.target.value)}>
             {unidadesTiempo.map(unidad => (
               <option key={unidad.valor} value={unidad.valor}>
                 {unidad.etiqueta}
@@ -109,8 +109,8 @@ const ConverTiempo = () => {
         <div className="resultado">
           <h3>Resultado:</h3>
           <p>
-            <strong>{resultado.valorOriginal}</strong> {resultado.unidadOrigen} = 
-            <strong> {resultado.valorConvertido}</strong> {resultado.unidadDestino}
+            <strong>{resultado.valorOriginal}</strong> {resultado.entrada} = 
+            <strong> {resultado.valorConvertido}</strong> {resultado.recibo}
           </p>
         </div>
       )}

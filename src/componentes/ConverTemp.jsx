@@ -21,8 +21,8 @@ const SelectUnidad = ({ label, value, onChange }) => (
 
 const ConverTemp = () => {
   const [valor, setValor] = useState('')
-  const [unidadOrigen, setunidadOrigen] = useState('celsius')
-  const [unidadDestino, setunidadDestino] = useState('fahrenheit')
+  const [entrada, setentrada] = useState('celsius')
+  const [recibo, setsetrecibo] = useState('fahrenheit')
   const [resultado, setResultado] = useState(null)
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
@@ -42,8 +42,8 @@ const ConverTemp = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           valor: parseFloat(valor),
-          unidadOrigen,
-          unidadDestino
+          entrada,
+          recibo
         })
       })
 
@@ -71,8 +71,8 @@ const ConverTemp = () => {
           />
         </div>
 
-        <SelectUnidad label="De:" value={unidadOrigen} onChange={setunidadOrigen} />
-        <SelectUnidad label="A:" value={unidadDestino} onChange={setunidadDestino} />
+        <SelectUnidad label="De:" value={entrada} onChange={setentrada} />
+        <SelectUnidad label="A:" value={recibo} onChange={setsetrecibo} />
 
         <button 
           onClick={convertir} 
@@ -89,8 +89,8 @@ const ConverTemp = () => {
         <div className="resultado">
           <h3>Resultado:</h3>
           <p>
-            <strong>{resultado.valorOriginal}</strong> {resultado.unidadOrigen} = 
-            <strong> {resultado.valorConvertido}</strong> {resultado.unidadDestino}
+            <strong>{resultado.valorOriginal}</strong> {resultado.entrada} = 
+            <strong> {resultado.valorConvertido}</strong> {resultado.recibo}
           </p>
         </div>
       )}
