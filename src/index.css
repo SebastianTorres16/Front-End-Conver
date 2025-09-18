@@ -4,7 +4,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 230, 230, 0.95); /* gris claro con toque cálido */
+  color: rgba(230, 255, 242, 0.95);
   background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2b0000);
 
   font-synthesis: none;
@@ -15,7 +15,7 @@
 
 a {
   font-weight: 500;
-  color: #e63946; /* rojo elegante */
+  color: #e63946; 
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -65,7 +65,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #2b2b2b;
-    background: #fafafa;
+    background: #907777;
   }
   a {
     color: #b22222;

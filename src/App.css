@@ -1,6 +1,6 @@
 #root {
   min-height: 100vh;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #2b0000);
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a, #1e2b00);
 }
 
 .app {
@@ -10,7 +10,7 @@
 }
 
 .header {
-  background: #111;
+  background: #111111;
   padding: 1.5rem 2rem;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
   border-bottom: 2px solid #3a0d0d;
