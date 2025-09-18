@@ -22,8 +22,8 @@ const SelectUnidad = ({ label, value, onChange }) => (
 
 const ConverMoneda = () => {
   const [valor, setValor] = useState('')
-  const [unidadOrigen, setUnidadOrigen] = useState('USD')
-  const [unidadDestino, setUnidadDestino] = useState('COP')
+  const [entrada, setentrada] = useState('USD')
+  const [recibo, setrecibo] = useState('COP')
   const [resultado, setResultado] = useState(null)
   const [cargando, setCargando] = useState(false)
   const [error, setError] = useState('')
@@ -43,8 +43,8 @@ const ConverMoneda = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           valor: parseFloat(valor),
-          unidadOrigen,
-          unidadDestino
+          entrada,
+          recibo
         })
       })
 
@@ -72,8 +72,8 @@ const ConverMoneda = () => {
           />
         </div>
 
-        <SelectUnidad label="De:" value={unidadOrigen} onChange={setUnidadOrigen} />
-        <SelectUnidad label="A:" value={unidadDestino} onChange={setUnidadDestino} />
+        <SelectUnidad label="De:" value={entrada} onChange={setentrada} />
+        <SelectUnidad label="A:" value={recibo} onChange={setrecibo} />
 
         <button 
           onClick={convertir} 
@@ -90,8 +90,8 @@ const ConverMoneda = () => {
         <div className="resultado">
           <h3>Resultado:</h3>
           <p>
-            <strong>{resultado.valorOriginal}</strong> {resultado.unidadOrigen} = 
-            <strong> {resultado.valorConvertido}</strong> {resultado.unidadDestino}
+            <strong>{resultado.valorOriginal}</strong> {resultado.entrada} = 
+            <strong> {resultado.valorConvertido}</strong> {resultado.recibo}
           </p>
         </div>
       )}
